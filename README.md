@@ -8,3 +8,4 @@
 python src/main.py add 2 3   # 5
 python src/main.py sub 7 1   # 6
 
+지원 연산 표기: add, sub
