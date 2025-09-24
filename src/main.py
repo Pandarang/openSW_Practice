@@ -4,7 +4,7 @@ import sys
 def main():
     if len(sys.argv) != 4:
         print("Usage: python src/main.py <op> <a> <b>")
-        print("op: add | sub")
+        print("op: add | sub | mul | div")
         sys.exit(1)
 
     op, a_str, b_str = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -20,8 +20,15 @@ def main():
         result = a + b
     elif op == "sub":
         result = a - b
+    elif op == "mul":
+        result = a * b
+    elif op == "div":
+        if b == 0:
+            print("Error: 0으로 나눌 수 없다.")
+            sys.exit(1)
+        result = a / b
     else:
-        print("Error: 현재 버전은 add|sub만 지원한다.")
+        print("Error: op는 add|sub|mul|div 중 하나여야 한다.")
         sys.exit(1)
 
     print(int(result) if float(result).is_integer() else result)
